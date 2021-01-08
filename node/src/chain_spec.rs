@@ -1,6 +1,6 @@
 use sp_core::{Pair, Public, sr25519};
 use shopbring_runtime::{
-	AccountId, AuraConfig, BalancesConfig, GenesisConfig, GrandpaConfig,
+	AccountId, AuraConfig, BalancesConfig, GenesisConfig, GrandpaConfig, GenericAssetConfig,
 	SudoConfig, SystemConfig, WASM_BINARY, Signature
 };
 use sp_consensus_aura::sr25519::AuthorityId as AuraId;
@@ -152,6 +152,17 @@ fn testnet_genesis(
 		pallet_sudo: Some(SudoConfig {
 			// Assign network admin rights.
 			key: root_key,
+		}),
+		pallet_generic_asset: Some(GenericAssetConfig {
+			assets: Default::default(),
+			// Grant root key full permissions (mint,burn,update) on the following assets
+			permissions: Default::default(),
+			initial_balance: Default::default(), // 1 billion token with 18 decimals
+			endowed_accounts: Default::default(),
+			next_asset_id: Default::default(),
+			staking_asset_id: Default::default(),
+			spending_asset_id: Default::default(),
+			asset_meta: Default::default(),
 		}),
 	}
 }

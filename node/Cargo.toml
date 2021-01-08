@@ -24,6 +24,7 @@ structopt = '0.3.8'
 
 # local dependencies
 shopbring-runtime = { path = '../runtime', version = '2.0.0' }
+primitives = { package = 'shopbring-primitives', path = '../primitives' }
 
 # Substrate dependencies
 frame-benchmarking = '2.0.0'
