@@ -5,7 +5,8 @@ panic = 'unwind'
 members = [
     'node',
     'pallets/template',
-    'pallets/shopping',
+    'pallets/commissioned-shopping',
+    'pallets/invitation',
     'pallets/generic-asset',
     'pallets/generic-asset/rpc',
     'pallets/generic-asset/rpc/runtime-api',

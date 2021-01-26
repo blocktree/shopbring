@@ -249,6 +249,16 @@ impl pallet_generic_asset::Trait for Runtime {
 	type WeightInfo = ();
 }
 
+parameter_types! {
+	pub const MinUnitBonus: Balance = 1000;
+}
+
+impl pallet_invitation::Trait for Runtime {
+	type Event = Event;
+	type Currency = Balances;
+	type MinUnitBonus = MinUnitBonus;
+}
+
 // Create the runtime by composing the FRAME pallets that were previously configured.
 construct_runtime!(
 	pub enum Runtime where
@@ -256,17 +266,23 @@ construct_runtime!(
 		NodeBlock = primitives::Block,
 		UncheckedExtrinsic = UncheckedExtrinsic
 	{
+		//系统级
 		System: frame_system::{Module, Call, Config, Storage, Event<T>},
 		RandomnessCollectiveFlip: pallet_randomness_collective_flip::{Module, Call, Storage},
 		Timestamp: pallet_timestamp::{Module, Call, Storage, Inherent},
+
+		// 共识
 		Aura: pallet_aura::{Module, Config<T>, Inherent},
 		Grandpa: pallet_grandpa::{Module, Call, Storage, Config, Event},
+
+		//系统默认
 		Balances: pallet_balances::{Module, Call, Storage, Config<T>, Event<T>},
 		TransactionPayment: pallet_transaction_payment::{Module, Storage},
 		Sudo: pallet_sudo::{Module, Call, Config<T>, Storage, Event<T>},
 		// Include the custom logic from the template pallet in the runtime.
 		TemplateModule: pallet_template::{Module, Call, Storage, Event<T>},
 		GenericAsset: pallet_generic_asset::{Module, Call, Storage, Event<T>, Config<T>},
+		Invitation: pallet_invitation::{Module, Call, Storage, Event<T>},
 	}
 );
 

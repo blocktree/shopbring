@@ -56,6 +56,7 @@ sp-session = { default-features = false, version = '2.0.0' }
 sp-std = { default-features = false, version = '2.0.0' }
 sp-transaction-pool = { default-features = false, version = '2.0.0' }
 sp-version = { default-features = false, version = '2.0.0' }
+pallet-invitation = { path = '../pallets/invitation', default-features = false }
 
 # 3rd-part open-source pallets
 
@@ -102,4 +103,5 @@ std = [
     "pallet-generic-asset/std",
     "pallet-generic-asset-rpc-runtime-api/std",
     "primitives/std",
+    "pallet-invitation/std",
 ]
