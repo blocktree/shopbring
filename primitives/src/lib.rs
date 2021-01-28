@@ -12,8 +12,8 @@ use sp_std::convert::{Into, TryFrom, TryInto};
 #[cfg(feature = "std")]
 use serde::{Deserialize, Serialize};
 
-#[cfg(test)]
-mod tests;
+// #[cfg(test)]
+// mod tests;
 
 /// An index to a block.
 pub type BlockNumber = u32;
@@ -73,6 +73,24 @@ pub use sp_runtime::OpaqueExtrinsic as UncheckedExtrinsic;
 
 /// Asset ID for generic asset module.
 pub type AssetId = u32;
+
+/// 4 length of byte
+pub type Byte4 = [u8; 4];
+
+/// 8 length of byte
+pub type Byte8 = [u8; 8];
+
+/// 16 length of byte
+pub type Byte16 = [u8; 16];
+
+/// 32 length of byte
+pub type Byte32 = [u8; 32];
+
+/// 64 length of byte
+pub type Byte64 = [u8; 64];
+
+/// 128 length of byte
+pub type Byte128 = [u8; 128];
 
 #[derive(Encode, Decode, Eq, PartialEq, Copy, Clone, RuntimeDebug, PartialOrd, Ord)]
 #[cfg_attr(feature = "std", derive(Serialize, Deserialize))]
