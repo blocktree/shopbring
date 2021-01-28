@@ -85,6 +85,10 @@ decl_storage! {
 		/// 邀请人绑定其邀请人登记信息。
 		pub InviterRegistration get(fn get_inviter_registration): map hasher(twox_64_concat) T::AccountId => Option<InvitationInfo<BalanceOf<T>>>;
 
+		/// 邀请人关系表
+		/// 被邀请绑定其上级邀请人的索引表
+		pub InviterRelationship get(fn get_inviter_relationship): map hasher(twox_64_concat) T::AccountId => T::AccountId;
+
 	}
 }
 
