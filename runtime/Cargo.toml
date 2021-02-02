@@ -25,10 +25,12 @@ hex-literal = { optional = true, version = '0.3.1' }
 serde = { features = ['derive'], optional = true, version = '1.0.101' }
 
 # local dependencies
+primitives = { package = 'shopbring-primitives', path = '../primitives', default-features = false }
 pallet-template = { path = '../pallets/template', default-features = false }
 pallet-generic-asset = { path = '../pallets/generic-asset', default-features = false }
 pallet-generic-asset-rpc-runtime-api = { path = '../pallets/generic-asset/rpc/runtime-api', default-features = false }
-primitives = { package = 'shopbring-primitives', path = '../primitives', default-features = false }
+pallet-invitation = { path = '../pallets/invitation', default-features = false }
+pallet-commissioned-shopping = { path = '../pallets/commissioned-shopping', default-features = false }
 
 # Substrate dependencies
 frame-benchmarking = { default-features = false, optional = true, version = '2.0.0' }
@@ -56,7 +58,6 @@ sp-session = { default-features = false, version = '2.0.0' }
 sp-std = { default-features = false, version = '2.0.0' }
 sp-transaction-pool = { default-features = false, version = '2.0.0' }
 sp-version = { default-features = false, version = '2.0.0' }
-pallet-invitation = { path = '../pallets/invitation', default-features = false }
 
 # 3rd-part open-source pallets
 
@@ -104,4 +105,5 @@ std = [
     "pallet-generic-asset-rpc-runtime-api/std",
     "primitives/std",
     "pallet-invitation/std",
+    "pallet-commissioned-shopping/std",
 ]

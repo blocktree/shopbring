@@ -7,3 +7,31 @@ license = 'Unlicense'
 name = 'pallet-commissioned-shopping'
 repository = 'https://github.com/blocktree/shopbring/'
 version = '1.0.0'
+
+[dependencies]
+codec = { package = "parity-scale-codec", version = "1.3.4", default-features = false }
+frame-support = { default-features = false, version = '2.0.0' }
+frame-system = { default-features = false, version = '2.0.0' }
+sp-std = { version = '2.0.0', default-features = false }
+primitives = { package = 'shopbring-primitives', path = '../../primitives', default-features = false }
+sp-core = { default-features = false, version = '2.0.0' }
+sp-io = { default-features = false, version = '2.0.0' }
+sp-runtime = { default-features = false, version = '2.0.0' }
+serde = { version = "1.0.101", optional = true }
+pallet-generic-asset = { path="../generic-asset", default-features = false }
+pallet-support = { path="../support", default-features = false }
+
+[features]
+default = ['std']
+std = [
+    'codec/std',
+    'frame-support/std',
+    'frame-system/std',
+    'primitives/std',
+    'sp-std/std',
+    'sp-io/std',
+    'sp-runtime/std',
+    'serde',
+    'pallet-generic-asset/std',
+    'pallet-support/std',
+]

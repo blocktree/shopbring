@@ -3430,6 +3430,19 @@ dependencies = [
 [[package]]
 name = "pallet-commissioned-shopping"
 version = "1.0.0"
+dependencies = [
+ "frame-support",
+ "frame-system",
+ "pallet-generic-asset",
+ "pallet-support",
+ "parity-scale-codec",
+ "serde",
+ "shopbring-primitives",
+ "sp-core",
+ "sp-io",
+ "sp-runtime",
+ "sp-std",
+]
 
 [[package]]
 name = "pallet-finality-tracker"
@@ -5802,6 +5815,7 @@ dependencies = [
  "hex-literal",
  "pallet-aura",
  "pallet-balances",
+ "pallet-commissioned-shopping",
  "pallet-generic-asset",
  "pallet-generic-asset-rpc-runtime-api",
  "pallet-grandpa",
